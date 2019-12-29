@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * 11726번 2xn타일링
+ */
 
 public class Baeckjun11726 {
     public static void main(String[] args) {

@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * 9095번 1,2,3 더하기
+ */
 
 public class Baeckjun9095 {
     public static void main(String[] args) {
@@ -19,6 +22,5 @@ public class Baeckjun9095 {
 
             System.out.println(dp[n]);
         }
-        sc.close();
     }
 }

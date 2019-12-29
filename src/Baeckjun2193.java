@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * 2193번 이친수
+ */
 
 public class Baeckjun2193 {
     public static void main(String[] args) {
