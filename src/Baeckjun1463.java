@@ -4,7 +4,7 @@ import java.util.Scanner;
  * 1463번 1로 만들기
  */
 
-public class MakeOne {
+public class Baeckjun1463 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
