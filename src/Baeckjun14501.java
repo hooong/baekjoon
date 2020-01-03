@@ -23,13 +23,12 @@ public class Baeckjun14501 {
         }
 
         for (int i=1; i<=n; i++) {
+            int max = dp[i];
             for (int j=1; j<=i; j++) {
-                if ((i-j+1) == meets[j][0]) dp[i] = Math.max(dp[i], dp[j]+meets[j][1]);
-                else if (i==j) {
-                    if (meets[j][0] == 1) dp[i] = Math.max(dp[i], dp[i-1]+meets[j][1]);
-                }
+                if ((i-j+1) == meets[j][0]) max = Math.max(max, dp[j-1]+meets[j][1]);
             }
+            dp[i] = Math.max(dp[i-1], max);
         }
-        System.out.println(Arrays.toString(dp));
+        System.out.println(dp[n]);
     }
 }
