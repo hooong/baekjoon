@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
@@ -21,7 +22,7 @@ public class Baeckjun15650 {
 
         visit = new boolean[n+1];
         seq = new char[m*2];
-        for (int i=0; i<seq.length; i++) seq[i] = ' ';
+        Arrays.fill(seq, ' ');
 
         back(1,0);
         System.out.println(sb.toString());
