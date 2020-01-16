@@ -24,10 +24,21 @@ public class Baeckjun1931 {
             meeting[i][1] = Integer.parseInt(st.nextToken());
         }
 
+//        Arrays.sort(meeting, (t1,t2) -> {
+//            if (t1[1] == t2[1]) {
+//                return Integer.compare(t1[0], t2[0]);
+//            } else {
+//                return Integer.compare(t1[1], t2[1]);
+//            }
+//        });
+
         Arrays.sort(meeting, new Comparator<int[]>() {
             @Override
             public int compare(int[] ints, int[] t1) {
-                return ints[1] - t1[1];
+                if (ints[1] == t1[1])
+                    return ints[0] - t1[0];
+                else
+                    return ints[1] - t1[1];
             }
         });
 
