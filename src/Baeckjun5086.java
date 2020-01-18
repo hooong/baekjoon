@@ -19,6 +19,7 @@ public class Baeckjun5086 {
             first = Integer.parseInt(st.nextToken());
             second = Integer.parseInt(st.nextToken());
 
+            // 종료를 위한 if문
             if (first==0 && second==0) break;
 
             if (first%second == 0 && first/second != 0) result = "multiple";
