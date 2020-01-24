@@ -49,7 +49,7 @@ public class Baekjoon10828 {
     }
 
     private static Boolean isEmpty() {
-        return stack.size() == 0;
+        return stack.isEmpty();
     }
 
     private static int top() {
