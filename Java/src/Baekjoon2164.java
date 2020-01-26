@@ -14,14 +14,18 @@ public class Baekjoon2164 {
         else {
             queue = new int[n];
 
-            // 짝수들만 오름차순으로 push
-            for (int i = 2; i <= n; i += 2) {
-                push(i);
-            }
+//            // 짝수들만 오름차순으로 push
+//            for (int i = 2; i <= n; i += 2) {
+//                push(i);
+//            }
+//
+//            // 홀수일경우 처음 수를 맨 뒤로 보냄
+//            if (n % 2 != 0) {
+//                push(pop());
+//            }
 
-            // 홀수일경우 처음 수를 맨 뒤로 보냄
-            if (n % 2 != 0) {
-                push(pop());
+            for (int i = 1; i <= n; i++) {
+                push(i);
             }
 
             while (size() != 1) {
