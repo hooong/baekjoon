@@ -21,25 +21,29 @@ public class Baekjoon18258 {
             StringTokenizer st = new StringTokenizer(br.readLine());
             String op = st.nextToken();
 
-            if (op.equals("push")) {
-                queue[(++back)%n] = Integer.parseInt(st.nextToken());
-            }
-            else if (op.equals("pop")) {
-                if (front == back) System.out.println(-1);
-                else System.out.println(queue[(++front)%n]);
-            }
-            else if (op.equals("size")) System.out.println(Math.abs(front-back));
-            else if (op.equals("empty")) {
-                if (front == back) System.out.println(1);
-                else System.out.println(0);
-            }
-            else if (op.equals("front")) {
-                if (front == back) System.out.println(-1);
-                else System.out.println(queue[front+1]);
-            }
-            else if (op.equals("back")) {
-                if (front == back) System.out.println(-1);
-                else System.out.println(queue[back]);
+            switch (op) {
+                case "push":
+                    queue[(++back) % n] = Integer.parseInt(st.nextToken());
+                    break;
+                case "pop":
+                    if (front == back) System.out.println(-1);
+                    else System.out.println(queue[(++front) % n]);
+                    break;
+                case "size":
+                    System.out.println(Math.abs(front - back));
+                    break;
+                case "empty":
+                    if (front == back) System.out.println(1);
+                    else System.out.println(0);
+                    break;
+                case "front":
+                    if (front == back) System.out.println(-1);
+                    else System.out.println(queue[front + 1]);
+                    break;
+                case "back":
+                    if (front == back) System.out.println(-1);
+                    else System.out.println(queue[back]);
+                    break;
             }
 
         }
