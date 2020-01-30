@@ -10,14 +10,18 @@ def pop_front():
 def pop_back():
     return queue.pop(len(queue)-1)
 
+# n,m 입력
 n, m = map(int, input().split())
 
+# queue 생성
 queue = list(range(1,n+1))
+# 뽑아내는 위치 입력
 pickNum = input().split()
 
 count = 0
 for num in pickNum:
-    pos = queue.index(int(num))
+    pos = queue.index(int(num)) # 뽑아내려는 수의 위치
+    # 최소값을 찾아내고 연산 수행
     if pos < len(queue) - pos:
         for _ in range(pos):
             push_back(pop_front())
