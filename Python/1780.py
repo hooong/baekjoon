@@ -1,3 +1,5 @@
+# 1780번 종이의 개수
+
 # 잘린 부분이 모두 한 숫자인지 확인
 def isOne(n,startX,startY):
     is_same = True
