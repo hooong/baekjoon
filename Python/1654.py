@@ -1,5 +1,4 @@
 # 1654번 랜선 자르기
-import sys
 
 # 이진 탐색
 def binSearch(n, start, end):
@@ -17,13 +16,13 @@ def binSearch(n, start, end):
             end = mid - 1
 
 # main
-k, n = [int(x) for x in sys.stdin.readline().split()]
+k, n = map(int,input().split())
 
 lines = []
 for _ in range(k):
-    lines.append(int(sys.stdin.readline()))
+    lines.append(int(input()))
 
 cut = []
-binSearch(n,0,max(lines))
+binSearch(n,1,max(lines))
 
 print(max(cut))
