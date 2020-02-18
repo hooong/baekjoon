@@ -1,7 +1,7 @@
 # 12015번 가장 긴 증가하는 부분 수열 2
 import sys
 
-# 이분 탐색
+# lower_bound
 def lower_bound(arr, start, end, n):
     while start < end:
         mid = (start + end) // 2
@@ -24,7 +24,7 @@ for num in a:
     if answer[-1] < num:
         answer.append(num)
     else:
-        idx = lower_bound(answer,0,len(answer),num)
+        idx = lower_bound(answer,0,len(answer)-1,num)
         answer[idx] = num
 
 print(len(answer))
