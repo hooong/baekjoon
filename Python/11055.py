@@ -8,10 +8,12 @@ arr = [int(x) for x in sys.stdin.readline().split()]
 dp = [0] * n
 
 dp[0] = arr[0]
-for i in range(1,n):
-    for j in range(i):
-        if arr[j] < arr[i]:
-            dp[i] = max(dp[j], dp[j] + arr[i])
-        else:
-            dp[j]
-print(max(dp))
+if n == 1:
+    print(dp[0])
+else:
+    for i in range(1,n):
+        dp[i] = arr[i]
+        for j in range(i+1):
+            if arr[j] < arr[i]:
+                dp[i] = max(dp[i], dp[j] + arr[i])
+    print(max(dp))
