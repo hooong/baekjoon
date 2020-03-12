@@ -25,13 +25,14 @@ for i in range(n):
 
 if unripe == 0:
     print(0)
+elif len(ripe) == 0:
+    print(-1)
 else:
     count = 0
     dx = [-1,0,1,0]
     dy = [0,-1,0,1]
 
-    if len(ripe) == 0:
-        print(-1)
+    
     else:
         while ripe:
             for _ in range(len(ripe)):
