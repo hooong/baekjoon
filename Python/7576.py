@@ -23,36 +23,39 @@ for i in range(n):
         j += 1
     farm.append(tmp)
 
+# 처음부터 모든 토마토가 익은 상황
 if unripe == 0:
     print(0)
+# 처음부터 익힐 수 없는 토마토가 있는 상황
 elif len(ripe) == 0:
     print(-1)
 else:
     count = 0
     dx = [-1,0,1,0]
     dy = [0,-1,0,1]
+ 
+    while ripe:
+        for _ in range(len(ripe)):
+            tomato = ripe.popleft()
+            x = tomato[0]
+            y = tomato[1]
 
-    
-    else:
-        while ripe:
-            for _ in range(len(ripe)):
-                tomato = ripe.popleft()
-                x = tomato[0]
-                y = tomato[1]
+            for i in range(4):
+                nx = x + dx[i]
+                ny = y + dy[i]
+                                    
+                # 안 익은 토마토 확인
+                if 0 <= nx and nx < n and 0 <= ny and ny < m:
+                    if farm[nx][ny] == 0:
+                        farm[nx][ny] =1
+                        ripe.append([nx,ny])
+                        unripe -= 1
+                        
+            # 모든 토마토가 익은 상황
+            if len(ripe) == 0 and unripe == 0:
+                print(count)
+            # 익힐 수 없는 토마토가 있는 상황
+            elif len(ripe) == 0 and unripe != 0:
+                print(-1)
 
-                for i in range(4):
-                    nx = x + dx[i]
-                    ny = y + dy[i]
-
-                    if 0 <= nx and nx < n and 0 <= ny and ny < m:
-                        if farm[nx][ny] == 0:
-                            farm[nx][ny] =1
-                            ripe.append([nx,ny])
-                            unripe -= 1
-                if len(ripe) == 0 and unripe == 0:
-                    print(count)
-                elif len(ripe) == 0 and unripe != 0:
-                    print(-1)
-
-            count += 1
-
+        count += 1
