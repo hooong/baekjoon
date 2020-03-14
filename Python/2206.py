@@ -25,9 +25,11 @@ def bfs():
 
             if 0 <= nx < n and 0 <= ny < m:
                 if visit[wall][nx][ny] == 0:
+                    # 벽이 부서지든 안부서지든 0이면 확인해야함.
                     if map[nx][ny] == '0':
                         visit[wall][nx][ny] = visit[wall][x][y] + 1
                         q.append([nx,ny,wall])
+                    # 벽이 부서지지 않은 상황에서 벽을 마주한다면 벽을 부순 상황으로 전환
                     elif map[nx][ny] == '1' and wall == 0:
                         visit[1][nx][ny] = visit[wall][x][y] + 1
                         q.append([nx,ny,1])
@@ -39,10 +41,11 @@ map = []
 for _ in range(n):
     map.append(list(sys.stdin.readline()))
 
+# 벽을 부순 경우, 부수지 않은 경우를 모두 확인해야함.
 visit = [[[0 for _ in range(m)] for _ in range(n)] for _ in range(2)]
 
 answer = bfs()
-if answer == None:
+if answer == None:  # 끝까지 가지 못하면 return값이 없음.
     print(-1)
 else:
     print(answer)
