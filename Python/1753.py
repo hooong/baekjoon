@@ -21,11 +21,13 @@ def dijkstra(v,k,g):
 
         if cost > d[node]:
             continue
-
+        
+        # 이웃한 노드들을 확인하여 최솟값 업데이트
         for n in g[node]:
             neighbor = n[0]
             n_cost = d[node] + n[1]
 
+            # node를 지나서 이웃으로 가는 cost가 최소인 경우 최신화
             if n_cost < d[neighbor]:
                 d[neighbor] = n_cost
                 heapq.heappush(hq, [n_cost,neighbor])
