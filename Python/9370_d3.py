@@ -61,10 +61,7 @@ for _ in range(T):
     d_h = dijkstra(n,h,graph)
 
     for target in targets:
-        # g,h 사이의 도로를 지나 target까지 가는 최단경로
-        min_d = min(d_s[g] + d_hg + d_h[target], d_s[h] + d_hg + d_g[target])
-
-        if d_s[target] == min_d:
+        if d_s[target] == d_s[g] + d_hg + d_h[target] or d_s[target] == d_s[h] + d_hg + d_g[target]:
             print(target, end=' ')
     print()
 

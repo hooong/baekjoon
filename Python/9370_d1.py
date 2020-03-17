@@ -35,13 +35,13 @@ def dijkstra(n, s, graph):
 T = int(input())
 
 for _ in range(T):
-    n, m, t = [int(x) for x in sys.stdin.readline().split()]
-    s, g, h = [int(x) for x in sys.stdin.readline().split()]
+    n, m, t = map(int, input().split())
+    s, g, h = map(int, input().split())
 
     # 그래프 입력
     graph = [[] for _ in range(n+1)]
     for _ in range(m):
-        a, b, d = [int(x) for x in sys.stdin.readline().split()]
+        a, b, d = map(int, input().split())
 
         if (a == g and b == h) or (a == h and b == g):
             d -= - 0.1    # h와 g 사이의 거리
