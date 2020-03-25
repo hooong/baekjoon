@@ -64,5 +64,4 @@ for _ in range(T):
         if d_s[target] == d_s[g] + d_hg + d_h[target] or d_s[target] == d_s[h] + d_hg + d_g[target]:
             print(target, end=' ')
     print()
-
     

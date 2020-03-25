@@ -44,7 +44,7 @@ for _ in range(T):
         a, b, d = map(int, input().split())
 
         if (a == g and b == h) or (a == h and b == g):
-            d -= - 0.1    # h와 g 사이의 거리
+            d -= 0.1    # h와 g 사이의 거리
 
         graph[a].append([b,d])
         graph[b].append([a,d])
@@ -57,6 +57,6 @@ for _ in range(T):
     ans_d = dijkstra(n,s,graph)
 
     for target in targets:
-        if type(ans_d[target]) == float:
+        if ans_d[target] != INF and type(ans_d[target]) == float:
             print(target, end=' ')
     print()
