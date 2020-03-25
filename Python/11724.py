@@ -30,10 +30,10 @@ for _ in range(m):
     g[e-1].append(s-1)
 
 visit = [False] * n
-count = 1
+count = 0
 for i in range(n):
     if not visit[i]:
         visit = bfs(n,g,i,visit)
         count += 1
 
-print(count-1)
+print(count)
