@@ -3,7 +3,7 @@ from collections import deque
 import sys
 
 # bfs
-def bfs(map, x, y, s):
+def bfs(map, x, y):
     global width
 
     q = deque()
@@ -23,7 +23,7 @@ def bfs(map, x, y, s):
 
             if 0 <= nx < n and 0 <= ny < m:
                 if map[ny][nx] == 0:
-                    map[ny][nx] = s
+                    map[ny][nx] = 1
                     q.append([nx,ny])
                     w += 1
     
@@ -45,12 +45,11 @@ for _ in range(k):
             map[y][x] = -1
 
 width = []      # 모든 영역의 넓이를 담을 배열
-site = 0        # 영역의 번호
 for i in range(m):
     for j in range(n):
         if map[i][j] == 0:
-            map[i][j] = site+1
-            bfs(map,j,i,site+1)
+            map[i][j] = 1
+            bfs(map,j,i)
 
 width.sort()
 # 출력
