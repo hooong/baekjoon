@@ -14,13 +14,14 @@ def bfs(g, start, end, n, m):
         p, count = q.popleft()
 
         for family in g[p]:
+            # p2로 도착
             if family == end:
                 return count+1
 
             if not visit[family]:
                 visit[family] = True
                 q.append([family,count+1])
-    return -1
+    return -1   # 갈 수 있는 경로가 없음
 
 # main
 n = int(input())
