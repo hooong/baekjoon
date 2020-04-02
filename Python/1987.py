@@ -36,4 +36,3 @@ alpha[ord(board[0][0])-65] = True
 maxCount = 0    # 최대 이동 칸수
 dfs(0,0,alpha,1)
 print(maxCount)
-
