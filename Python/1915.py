@@ -14,6 +14,7 @@ maxSide = 0
 for y in range(n):
     for x in range(m):
         if board[y][x] == '1':
+            # 대각선 위, 위, 왼쪽 중 최솟값에 + 1 저장.
             dp[y+1][x+1] = min(dp[y][x], min(dp[y+1][x], dp[y][x+1])) + 1
             maxSide = max(maxSide, dp[y+1][x+1])
 
