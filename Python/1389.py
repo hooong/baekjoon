@@ -1,46 +1,31 @@
 # 1389번 케빈 베이컨의 6단계 법칙
 import sys
-
-# dfs
-def dfs(visit, start, cur, count):
-    global steps, social, N
-
-    visit[start] = True
-    steps[start][cur] = min(steps[start][cur], count)
-
-    for node in social[cur]:
-        if not visit[node]:
-            visit[node] = True
-            dfs(visit, start, node, count+1)
-            visit[node] = False
-
-    visit[start] = False
+INF = float('inf')
 
 # main
 N, M = [int(x) for x in sys.stdin.readline().split()]
 
-# 관계 그래프 (무방향)
-social = [[] for _ in range(N)]
+# [직전 정점, 거리]
+relation = [[INF for _ in range(N)] for _ in range(N)]
+
 for _ in range(M):
-    a, b = [int(x) for x in sys.stdin.readline().split()]
-    social[a-1].append(b-1)
-    social[b-1].append(a-1)
+    x, y = [int(x) for x in sys.stdin.readline().split()]
 
-# 각 관계의 최소 거리
-steps = [[100 for _ in range(N)] for _ in range(N)]
+    # 테이블 초기화
+    relation[x-1][y-1] = 1
+    relation[y-1][x-1] = 1
 
-# 방문 여부 저장
-visit = [False for _ in range(N)]
-for i in range(N):
-    dfs(visit, i, i, 0)
+for k in range(N):
+    for i in range(N):
+        for j in range(N):
+            relation[i][j] = min(relation[i][j], relation[i][k] + relation[k][j])
 
 # 케빈 베이컨 수
-minStep = float('inf')
-victory = 0
+kebin = []
 for i in range(N):
-    kebin = sum(steps[i])
-    if minStep > kebin:
-        minStep = kebin
-        victory = i+1
-    
-print(victory)
+    dSum = 0
+    for j in range(N):
+        dSum += relation[i][j]
+    kebin.append(dSum)
+
+print(kebin.index(min(kebin)) + 1)
