@@ -4,8 +4,6 @@ import sys, copy
 # main
 N = int(input())
 
-dpMin = []
-dpMax = []
 for n in range(N):
     line = [int(x) for x in sys.stdin.readline().split()]
 
