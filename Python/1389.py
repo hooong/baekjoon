@@ -21,7 +21,6 @@ for k in range(N):      # 한 점을 경유
         for j in range(N):  # j로 도착
             relation[i][j] = min(relation[i][j], relation[i][k] + relation[k][j])
 
-print(relation)
 # 케빈 베이컨 수
 kebin = []
 for i in range(N):
