@@ -22,8 +22,10 @@ nbtn = [int(x) for x in sys.stdin.readline().split()]
 for b in nbtn:
     btn[b] = False
 
+# 1. 100번에서 '+', '-'
 minClick = abs(n-100)
 
+# 2,3. 리모컨에서 접근할 수 있는 버튼에서 접근
 for ch in range(1000000):
     if check_click(ch):
         click = abs(ch-n) + len(str(ch))
