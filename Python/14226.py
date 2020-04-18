@@ -6,7 +6,7 @@ def bfs(s):
     q = deque()
     q.append([1,0,0])
 
-    visited = [[False for _ in range(1001)] for _ in range(1001)]
+    visited = [[False for _ in range(s+1)] for _ in range(s+1)]
     visited[1][0] = True
 
     while q:
