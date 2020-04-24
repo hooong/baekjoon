@@ -2,8 +2,8 @@
 import sys
 
 # dfs
-def dfs(x, y, al, count):
-    global board, R, C, maxCount
+def dfs(x, y, count):
+    global board, R, C, alpha, maxCount
 
     # 최대 칸수 최신화
     maxCount = max(maxCount,count)
@@ -18,10 +18,10 @@ def dfs(x, y, al, count):
         # ord()를 사용해서 아스키 코드로 변환
         if 0 <= nx < C and 0 <= ny < R:
             c = ord(board[ny][nx]) - 65
-            if not al[c]:
-                al[c] = True
-                dfs(nx,ny,al,count+1)
-                al[c] = False
+            if not alpha[c]:
+                alpha[c] = True
+                dfs(nx,ny,count+1)
+                alpha[c] = False
 
 # main
 R, C = map(int, input().split())
@@ -34,5 +34,5 @@ alpha = [False] * 26    # 알파벳 방문 여부
 alpha[ord(board[0][0])-65] = True
 
 maxCount = 0    # 최대 이동 칸수
-dfs(0,0,alpha,1)
+dfs(0,0,1)
 print(maxCount)
