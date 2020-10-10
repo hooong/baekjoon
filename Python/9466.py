@@ -1,4 +1,4 @@
-# 9566번 텀 프로젝트
+# 9466번 텀 프로젝트
 import sys
 
 sys.setrecursionlimit(111111)
