@@ -1,16 +1,6 @@
 # 12100번 2048 (Easy)
 from copy import deepcopy
 
-# 상, 하, 좌, 우
-dx = [0, 0, -1, 1]
-dy = [-1, 1, 0, 0]
-
-
-def print_board(board):
-    for b in board:
-        print(*b)
-    print()
-
 
 def up(board):
     global answer
@@ -21,7 +11,7 @@ def up(board):
             if not board[y][x] == 0:
                 ny = y
                 while ny > 0:
-                    if not board[ny-1][x] == 0:
+                    if not board[ny -1][x] == 0:
                         break
                     ny -= 1
 
