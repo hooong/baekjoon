@@ -26,11 +26,12 @@ def make_table(p):
         if p[i] == p[j]:
             j += 1
             table[i] = j
+    print(table)
 
 
 if __name__ == "__main__":
     string = "abacdabacaabacaaba"
-    pattern = "abacaaba"
+    pattern = "abcdabcdabc"
 
     table = [0] * len(pattern)
     make_table(pattern)
