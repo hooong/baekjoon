@@ -6,6 +6,7 @@ def bfs(pos):
 
     q = deque()
     q.append([pos, 0])
+    visited[pos] = True
     while q:
         cur, dis = q.pop()
 
