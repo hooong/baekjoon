@@ -1,6 +1,6 @@
 from typing import Optional
 
-from leetcode.ListNode import make_list_node, print_list_node, ListNode
+from leetcode.data_structures.list_node import make_list_node, print_list_node, ListNode
 
 
 class Solution:
