@@ -3,15 +3,9 @@ class Solution:
         stack = []
 
         for ch in s:
-            is_unique = True
-            while stack:
-                if stack[-1] == ch:
-                    is_unique = False
-                    stack.pop()
-                else:
-                    break
-
-            if is_unique:
+            if stack and stack[-1] == ch:
+                stack.pop()
+            else:
                 stack.append(ch)
 
         return ''.join(stack)
